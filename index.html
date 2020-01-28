@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="particles.min.js">
+      </script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+      <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="io"></div>
+    <div class="container">
+      <h1 class="d"><span> Fullstack</span> Developer</h1 >
+       
+      <div id="o" onclick="toggleFullScreen()" class="s">
+        </div>
+      </div>
+      </div>
+       <nav id="nav">
+         <ul >
+           <li><a class="con" href="#s">Lorem</a></li>
+           <li><a class="con" href="#io">Lorem</a></li>
+           <li><a class="con" href="">Lorem</a></li>
+         </ul>
+       </nav>
+    <div id="s" class="head"></div>
+    <div class="opt">
+      <div onclick="toggleFullScreen()" class="is">
+        <img id="imk" src="expand.svg" alt="" srcset="">
+      </div>
+    </div>
+    <script>
+    window.onscroll = function() {myFunction()};
+function myFunction() {
+  if ( document.documentElement.scrollTop > 200) {
+   var h= document.getElementsByClassName("con");
+   for (let index = 0; index < h.length; index++) {
+     h[index].style.color='white'
+   }
+   console.log(document.body.scrollTop)
+  } else {
+    var h= document.getElementsByClassName("con");
+   for (let index = 0; index < h.length; index++) {
+     h[index].style.color='#33334B'
+   }
+  }
+}</script>
+<script>
+function toggleFullScreen() {
+  if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if (document.documentElement.requestFullScreen) { 
+      document.getElementById('imk').src='exf.png';
+      //
+      document.documentElement.requestFullScreen();  
+    } else if (document.documentElement.mozRequestFullScreen) { 
+      document.getElementById('imk').src='exf.png'; 
+      document.documentElement.mozRequestFullScreen();  
+      
+    } else if (document.documentElement.webkitRequestFullScreen) { 
+      document.getElementById('imk').src='exf.png'; 
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+    }  
+  } else {  
+    if (document.cancelFullScreen) {
+      document.getElementById('imk').src='expand.svg';
+      document.cancelFullScreen();  
+    } else if (document.mozCancelFullScreen) {  
+      document.getElementById('imk').src='expand.svg';
+      document.mozCancelFullScreen();  
+    } else if (document.webkitCancelFullScreen) {  
+      document.getElementById('imk').src='expand.svg';
+      document.webkitCancelFullScreen();  
+    }  
+  }  
+}
+</script>
+<script>
+
+$( document ).ready(function() {
+  $("a[href^='#']").click(function(e) {
+	e.preventDefault();
+	var position = $($(this).attr("href")).offset().top;
+	$("body, html").animate({
+		scrollTop: position
+	});
+});
+});
+</script>
+<script>
+// ParticlesJS Config.
+particlesJS("io", {
+  "particles": {
+    "number": {
+      "value": 114,
+      "density": {
+        "enable": true,
+        "value_area": 400
+      }
+    },
+    "color": {
+      "value": "#f8ff47"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 0.1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 10,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#fa8072",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 2,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+</script>
+</body>
+</html>
